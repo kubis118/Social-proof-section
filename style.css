@@ -1,0 +1,294 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* START 
+- Mobile: 375px
+- Desktop: 1440px
+*/
+
+:root {
+  --cl-primary-dark-magenta: hsl(300, 43%, 22%);
+  --cl-primary-pink: hsl(333, 80%, 67%);
+
+  --cl-neutral-gray-magenta: hsl(303, 10%, 53%);
+  --cl-neutral-light-magenta: hsl(300, 24%, 96%);
+  --cl-neutral-white: hsl(0, 0%, 100%);
+
+  --ff-primary: "League Spartan", sans-serif;
+
+  --fw-normal: 400;
+  --fw-semi-bold: 500;
+  --fw-bold: 700;
+}
+
+body {
+  font-family: var(--ff-primary);
+  background-image: url(./img/bg-pattern-top-mobile[1].svg),
+    url(./img/bg-pattern-bottom-mobile[1].svg);
+  background-repeat: no-repeat;
+  background-position: top, bottom;
+  background-color: var(--cl-neutral-white);
+}
+
+top-part,
+.rating-container,
+.testimonial-box {
+  width: 90%;
+  margin-inline: auto;
+}
+
+.top-part {
+  margin-inline: auto;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+h1 {
+  color: var(--cl-primary-dark-magenta);
+  padding: 0 1rem;
+  letter-spacing: -1px;
+  line-height: 0.9;
+  font-weight: var(--fw-bold);
+  font-size: 39px;
+  margin-bottom: 1rem;
+}
+
+.header-text {
+  color: var(--cl-neutral-gray-magenta);
+  font-size: 18px;
+  margin-bottom: 2.5rem;
+}
+
+.rating-container {
+  margin-bottom: 2rem;
+}
+
+.rating {
+  background-color: var(--cl-neutral-light-magenta);
+  border-radius: 0.5rem;
+  margin: 0.8rem 0;
+}
+
+.stars {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  padding: 0.8rem 0 0 0;
+}
+
+.rating-text {
+  font-size: 18px;
+  text-align: center;
+  color: var(--cl-primary-dark-magenta);
+  font-weight: var(--fw-bold);
+  padding: 0.7rem;
+}
+
+.testimonial-box {
+  background-color: var(--cl-primary-dark-magenta);
+  color: var(--cl-neutral-light-magenta);
+  padding: 2rem 3rem 2rem 2rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+
+.colton {
+  margin-top: 3rem;
+}
+
+.testimonial-profile {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.icon {
+  border-radius: 100vh;
+  width: 40px;
+  height: 40px;
+  margin: 0.4rem 2rem 0 0;
+}
+
+.name {
+  font-size: 20px;
+}
+
+.verified-buyer {
+  color: var(--cl-primary-pink);
+  font-size: 16px;
+  line-height: 0.7;
+}
+
+.testimonial-text {
+  color: var(--cl-neutral-light-magenta);
+  font-weight: var(--fw-normal);
+  font-size: 15px;
+}
+
+.anne {
+  margin-bottom: 7rem;
+}
+
+@media (min-width: 1440px) {
+  body {
+    background-image: url(./img/bg-pattern-top-desktop[1].svg),
+      url(./img/bg-pattern-bottom-desktop[1].svg);
+    background-repeat: no-repeat;
+    background-position: top left, bottom right;
+  }
+
+  .top-flex {
+    display: flex;
+    margin-top: 4.8rem;
+  }
+
+  .top-part {
+    padding: 0 0rem 0 7rem;
+    width: 60%;
+  }
+
+  h1 {
+    text-align: start;
+    padding: 0;
+    font-size: 60px;
+    font-weight: var(--fw-bold);
+    margin-bottom: 1.5rem;
+  }
+
+  .header-text {
+    text-align: start;
+    font-weight: var(--fw-semi-bold);
+    font-size: 20px;
+  }
+
+  .rating-container {
+    padding: 0 0 0 11rem;
+  }
+
+  .rating {
+    display: flex;
+    width: 70%;
+    align-items: center;
+    padding: 0.35rem 0 0.35rem 2rem;
+    gap: 1rem;
+    margin: 0;
+  }
+
+  .rating:first-child {
+    margin: 6rem 0 1rem 0;
+  }
+
+  .rating:nth-child(2) {
+    margin: 1rem 0 0 3rem;
+  }
+
+  .rating:last-child {
+    margin: 1rem 0 0 6rem;
+  }
+
+  .stars {
+    padding: 0;
+  }
+
+  .rating-text {
+    font-size: 20px;
+  }
+
+  .star-img {
+    width: 17px;
+    height: 16px;
+  }
+
+  .testimonial-flex {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+
+    padding: 1rem 7rem 0 7rem;
+  }
+
+  .testimonial-box {
+    margin: 0;
+    height: 250px;
+  }
+
+  .irene {
+    margin-top: 1rem;
+  }
+
+  .anne {
+    margin-top: 2rem;
+  }
+
+  .testimonial-text {
+    font-size: 17px;
+    font-weight: var(--fw-normal);
+    line-height: 1.5;
+  }
+}
